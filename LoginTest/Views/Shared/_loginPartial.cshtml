@@ -1,0 +1,25 @@
+﻿
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("My Account", "MyProfile", "Account", null, null)
+        </li>
+        <li>
+            @Html.ActionLink("Deconnexion", "Logout", "Account", null, null)
+        </li>
+    </ul>
+    }
+    else
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Register", "Register", "Account", null, null)
+            </li>
+            <li>
+                @Html.ActionLink("Login", "Login", "Account", null, null)
+            </li>
+        </ul>
+    }
+}
